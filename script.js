@@ -2,7 +2,8 @@ let days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
 let holidayIcon = "🎉";
 
 document.getElementById("body").style.backgroundColor = getBackgroundColor(days);
-document.getElementById("coffee_of_the_day").src = getPhotoOfDay();
+document.getElementById("coffee_of_the_day").src = getPhotoOfDay().url;
+document.getElementById("coffee_of_the_day").alt = getPhotoOfDay().alt;
 document.getElementById("day_of_week").innerHTML = getDayOfWeek(days);
 
 // function test() {
@@ -43,19 +44,40 @@ function getPhotoOfDay() {
     let d = new Date();
     switch (getDayOfWeek(days)) {
         case "Mon":
-            return "./images/caffè-macchiato.jpeg";
+            return {
+                url: "./images/caffè-macchiato.jpeg",
+                alt: "Caffeè Macchiato"
+            };
         case "Tue":
-            return "./images/caffè-mocha.jpeg";
+            return {
+                url: "./images/caffè-mocha.jpeg",
+                alt: "Caffeè Mocha"
+            };
         case "Wed":
-            return "./images/cappuccino.jpeg";
+            return {
+                url: "./images/cappuccino.jpeg",
+                alt: "Cappuccino"
+            };
         case "Thu":
-            return "./images/cold-brew.jpeg";
+            return {
+                url: "./images/cold-brew.jpeg",
+                alt: "Cold Brew"
+            };
         case "Fri":
-            return "./images/espresso.jpeg";
+            return {
+                url: "./images/espresso.jpeg",
+                alt: "Espresso"
+            };
         case "Sat":
-            return "./images/iced-coffee.jpg";
+            return {
+                url: "./images/iced-coffee.jpg",
+                alt: "Iced Coffee"
+            };
         case "Sun":
-            return "./images/latte.jpeg";
+            return {
+                url: "./images/latte.jpeg",
+                alt: "Latte"
+            };
         default:
             break;
     }
