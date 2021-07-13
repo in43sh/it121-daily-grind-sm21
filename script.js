@@ -1,7 +1,8 @@
 let days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
 let holidayIcon = "🎉";
 
-document.getElementById("coffee_of_the_day").src = getPhotoOfWeek();
+document.getElementById("body").style.backgroundColor = getBackgroundColor(days);
+document.getElementById("coffee_of_the_day").src = getPhotoOfDay();
 document.getElementById("day_of_week").innerHTML = getDayOfWeek(days);
 
 // function test() {
@@ -10,6 +11,27 @@ document.getElementById("day_of_week").innerHTML = getDayOfWeek(days);
 //     alert(dayOfWeek);
 // }
 
+function getBackgroundColor(days) {
+    switch (getDayOfWeek(days)) {
+        case "Mon":
+            return "red";
+        case "Tue":
+            return "blue";
+        case "Wed":
+            return "green";
+        case "Thu":
+            return "gray";
+        case "Fri":
+            return "yellow";
+        case "Sat":
+            return "brown";
+        case "Sun":
+            return "orange";
+        default:
+            break;
+    }
+}
+
 function getDayOfWeek() {
     let d = new Date();
     // let dayOfWeek = d.getDay();
@@ -17,7 +39,7 @@ function getDayOfWeek() {
     return days[d.getDay()];
 }
 
-function getPhotoOfWeek() {
+function getPhotoOfDay() {
     let d = new Date();
     switch (getDayOfWeek(days)) {
         case "Mon":
@@ -34,6 +56,29 @@ function getPhotoOfWeek() {
             return "./images/iced-coffee.jpg";
         case "Sun":
             return "./images/latte.jpeg";
+        default:
+            break;
+    }
+}
+
+
+function getBackground() {
+    let d = new Date();
+    switch (getDayOfWeek(days)) {
+        case "Mon":
+            return "red";
+        case "Tue":
+            return "blue";
+        case "Wed":
+            return "green";
+        case "Thu":
+            return "gray";
+        case "Fri":
+            return "yellow";
+        case "Sat":
+            return "brown";
+        case "Sun":
+            return "orange";
         default:
             break;
     }
