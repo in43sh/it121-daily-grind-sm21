@@ -4,13 +4,16 @@ const urlParams = new URLSearchParams(queryString);
 let d = new Date();
 let today = d.getDay();
 
-today = urlParams.get('day');
+// today = urlParams.get('day');
 
 if (urlParams.has('day')) {
     // today = urlParams.get('day');
     // today = parseInt(today);
     today = parseInt(urlParams.get('day'));
 }
+
+console.log("today ====> ", today);
+console.log("getInfoAboutDay(today) ======>" + getInfoAboutDay(today));
 
 document.getElementById("body").style.backgroundColor = getInfoAboutDay(today).pagePrimaryColor;
 document.getElementById("main_container").style.backgroundColor = getInfoAboutDay(today).pageSecondaryColor;
