@@ -1,9 +1,16 @@
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
-console.log(queryString);
 
 let d = new Date();
 let today = d.getDay();
+
+today = urlParams.get('day');
+
+if (urlParams.has('day')) {
+    // today = urlParams.get('day');
+    // today = parseInt(today);
+    today = parseInt(urlParams.get('day'));
+}
 
 document.getElementById("body").style.backgroundColor = getInfoAboutDay(today).pagePrimaryColor;
 document.getElementById("main_container").style.backgroundColor = getInfoAboutDay(today).pageSecondaryColor;
@@ -13,11 +20,11 @@ document.getElementById("day_of_week").innerHTML = getInfoAboutDay(today).day;
 document.getElementById("coffe_of_the_day_description").innerHTML = getInfoAboutDay(today).description;
 
 function getInfoAboutDay(today) {
-    switch (d.getDay()) {
+    switch (today) {
         case 0:
             return {
                 day: "Sunday",
-                itemImgURL: "../images/caffè-macchiato.jpeg",
+                itemImgURL: "../assets/images/caffè-macchiato.jpeg",
                 itemImgAlt: "Caffeè Macchiato",
                 pagePrimaryColor: "#f00",
                 pageSecondaryColor: "#b35a5a",
@@ -80,11 +87,4 @@ function getInfoAboutDay(today) {
         default:
             break;
     }
-}
-
-let today = urlParams.get('day');
-
-if (urlParams.has('day')) {
-    today = urlParams.get('day');
-    today = parseInt(today);
 }
