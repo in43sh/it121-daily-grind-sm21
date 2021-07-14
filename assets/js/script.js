@@ -4,7 +4,7 @@ const urlParams = new URLSearchParams(queryString);
 let d = new Date();
 let today = d.getDay();
 
-today = urlParams.get('day');
+// today = urlParams.get('day');
 
 if (urlParams.has('day')) {
     // today = urlParams.get('day');
