@@ -1,20 +1,23 @@
-let days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-let holidayIcon = "🎉";
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+console.log(queryString);
 
-document.getElementById("body").style.backgroundColor = getInfoAboutDay().pagePrimaryColor;
-document.getElementById("main_container").style.backgroundColor = getInfoAboutDay().pageSecondaryColor;
-document.getElementById("coffee_of_the_day").src = getInfoAboutDay().itemImgURL;
-document.getElementById("coffee_of_the_day").alt = getInfoAboutDay().itemImgAlt;
-document.getElementById("day_of_week").innerHTML = getInfoAboutDay().day;
-document.getElementById("coffe_of_the_day_description").innerHTML = getInfoAboutDay().description;
+let d = new Date();
+let today = d.getDay();
 
-function getInfoAboutDay() {
-    let d = new Date();
+document.getElementById("body").style.backgroundColor = getInfoAboutDay(today).pagePrimaryColor;
+document.getElementById("main_container").style.backgroundColor = getInfoAboutDay(today).pageSecondaryColor;
+document.getElementById("coffee_of_the_day").src = getInfoAboutDay(today).itemImgURL;
+document.getElementById("coffee_of_the_day").alt = getInfoAboutDay(today).itemImgAlt;
+document.getElementById("day_of_week").innerHTML = getInfoAboutDay(today).day;
+document.getElementById("coffe_of_the_day_description").innerHTML = getInfoAboutDay(today).description;
+
+function getInfoAboutDay(today) {
     switch (d.getDay()) {
         case 0:
             return {
                 day: "Sunday",
-                itemImgURL: "./images/caffè-macchiato.jpeg",
+                itemImgURL: "../images/caffè-macchiato.jpeg",
                 itemImgAlt: "Caffeè Macchiato",
                 pagePrimaryColor: "#f00",
                 pageSecondaryColor: "#b35a5a",
@@ -23,7 +26,7 @@ function getInfoAboutDay() {
         case 1:
             return {
                 day: "Monday",
-                itemImgURL: "./images/caffè-mocha.jpeg",
+                itemImgURL: "../assets/images/caffè-mocha.jpeg",
                 itemImgAlt: "Caffeè Mocha",
                 pagePrimaryColor: "#00f",
                 pageSecondaryColor: "#4e4ee8",
@@ -32,7 +35,7 @@ function getInfoAboutDay() {
         case 2:
             return {
                 day: "Tuesday",
-                itemImgURL: "./images/cappuccino.jpeg",
+                itemImgURL: "../assets/images/cappuccino.jpeg",
                 itemImgAlt: "Cappuccino",
                 pagePrimaryColor: "#0f0",
                 pageSecondaryColor: "#92ff92",
@@ -41,7 +44,7 @@ function getInfoAboutDay() {
         case 3:
             return {
                 day: "Wednesday",
-                itemImgURL: "./images/cold-brew.jpeg",
+                itemImgURL: "../assets/images/cold-brew.jpeg",
                 itemImgAlt: "Cold Brew",
                 pagePrimaryColor: "#808080",
                 pageSecondaryColor: "#3f3f3f",
@@ -50,7 +53,7 @@ function getInfoAboutDay() {
         case 4:
             return {
                 day: "Thursday",
-                itemImgURL: "./images/espresso.jpeg",
+                itemImgURL: "../assets/images/espresso.jpeg",
                 itemImgAlt: "Espresso",
                 pagePrimaryColor: "#ffff00",
                 pageSecondaryColor: "#ffff46",
@@ -59,7 +62,7 @@ function getInfoAboutDay() {
         case 5:
             return {
                 day: "Friday",
-                itemImgURL: "./images/iced-coffee.jpg",
+                itemImgURL: "../assets/images/iced-coffee.jpg",
                 itemImgAlt: "Iced Coffee",
                 pagePrimaryColor: "#a52a2a",
                 pageSecondaryColor: "#ffb5b5",
@@ -68,7 +71,7 @@ function getInfoAboutDay() {
         case 6:
             return {
                 day: "Saturday",
-                itemImgURL: "./images/latte.jpeg",
+                itemImgURL: "../assets/images/latte.jpeg",
                 itemImgAlt: "Latte",
                 pagePrimaryColor: "#ffa500",
                 pageSecondaryColor: "#ffd484",
@@ -77,4 +80,11 @@ function getInfoAboutDay() {
         default:
             break;
     }
+}
+
+let today = urlParams.get('day');
+
+if (urlParams.has('day')) {
+    today = urlParams.get('day');
+    today = parseInt(today);
 }
