@@ -3,6 +3,10 @@
     src: url("../fonts/maxxi-serif-bold.ttf");
 }
 
+p {
+    margin: 0;
+}
+
 .body {
     display: flex;
     flex-direction: column;
@@ -38,24 +42,33 @@
     padding: 1rem;
 }
 
+.day-of-week-text {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
 .coffee {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 1rem;
 
-    &__img-container {
-        width: 100%;
-        max-width: 300px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
+    // &__img-container {
+    //     width: 100%;
+    //     max-width: 300px;
+    //     display: flex;
+    //     flex-direction: column;
+    //     justify-content: center;
+    //     margin-bottom: 1rem;
+    // }
 
     &__img {
         width: 100%;
         max-width: 300px;
         height: 100%;
         object-fit: cover;
+        margin-bottom: 1rem;
     }
 
     &__description {
@@ -63,12 +76,6 @@
         line-height: 150%;
     }
 }
-
-// .coffee-img {
-//     width: 100%;
-//     max-width: 300px;
-//     height: auto;
-// }
 
 .nav {
     display: flex;
@@ -92,6 +99,10 @@
 
     .coffee {
         flex-direction: row;
+
+        &__img {
+            margin-bottom: 0;
+        }
 
         &__description {
             font-size: 20px;

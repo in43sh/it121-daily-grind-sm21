@@ -19,8 +19,8 @@ document.getElementById("body").style.backgroundColor = getInfoAboutDay(today).p
 // document.getElementById("main_container").style.backgroundColor = getInfoAboutDay(today).pageSecondaryColor;
 document.getElementById("coffee_of_the_day").src = getInfoAboutDay(today).itemImgURL;
 document.getElementById("coffee_of_the_day").alt = getInfoAboutDay(today).itemImgAlt;
-document.getElementById("day_of_week").innerHTML = "Today is " + getInfoAboutDay(today).day + "!";
-document.getElementById("coffe_of_the_day_description").innerHTML = getInfoAboutDay(today).description;
+document.getElementById("day_of_week").innerHTML = "Today is " + getInfoAboutDay(today).day + "! And today's coffee is " + getInfoAboutDay(today).itemImgAlt;
+document.getElementById("coffe_of_the_day_description").innerHTML = "<h3 style='font-weight: bold; margin-bottom: .2rem; display: block;'>About " + getInfoAboutDay(today).itemImgAlt + ":</h3>" + getInfoAboutDay(today).description;
 
 function getInfoAboutDay(today) {
     switch (today) {
