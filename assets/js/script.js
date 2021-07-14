@@ -12,8 +12,8 @@ if (urlParams.has('day')) {
     today = parseInt(urlParams.get('day'));
 }
 
-console.log("today ====> ", today);
-console.log("getInfoAboutDay(today) ======>" + getInfoAboutDay(today));
+// console.log("today ====> ", today);
+// console.log("getInfoAboutDay(today) ======>" + getInfoAboutDay(today));
 
 document.getElementById("body").style.backgroundColor = getInfoAboutDay(today).pagePrimaryColor;
 document.getElementById("main_container").style.backgroundColor = getInfoAboutDay(today).pageSecondaryColor;
