@@ -27,7 +27,7 @@ function getInfoAboutDay(today) {
         case 0:
             return {
                 day: "Sunday",
-                itemImgURL: "../assets/images/caffè-macchiato.jpeg",
+                itemImgURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Caff%C3%A8_Espresso_Macchiato_Schiumato.jpg/500px-Caff%C3%A8_Espresso_Macchiato_Schiumato.jpg",
                 itemImgAlt: "Caffeè Macchiato",
                 pagePrimaryColor: "#626157",
                 // pageSecondaryColor: "#c7c7c78c",
