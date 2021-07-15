@@ -73,8 +73,7 @@ p {
 }
 
 .coffee__img {
-  width: 100%;
-  max-width: 300px;
+  width: 300px;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
