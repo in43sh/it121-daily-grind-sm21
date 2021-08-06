@@ -1,3 +1,3 @@
 # Demo Link
 
-<https://daily-grind-sccc.netlify.app/>
+[daily-grind-sccc.netlify.app](https://daily-grind-sccc.netlify.app/)
